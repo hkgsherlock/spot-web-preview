@@ -10,12 +10,20 @@
             font: 12px sans-serif;
         }
 
+        .ad {
+            position: absolute;
+            left: 50%;
+            margin: 15px 0 0 360px;
+            background: #fff;
+            width: 200px;
+            height: 75vh;
+        }
+
         #mainContent {
             width: 680px;
             margin-top: 64px;
-            padding: 10px;
-
-            border: 1px #f00 dotted;
+            padding: 0 10px;
+            /*border: 1px #f00 dotted;*/
         }
 
         #top {
@@ -92,11 +100,15 @@
 
         .postItem {
             width: 100%;
-            margin: 5px 0;
+            margin: 10px 0;
+            background: #DDD;
+            -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
         }
 
         .postUser {
-            height: 250px;
+            height: 200px;
             background: #FFD5AA;
             -webkit-box-shadow: 0 0 5px rgba(140, 70, 0, 0.5);
             -moz-box-shadow: 0 0 5px rgba(140, 70, 0, 0.5);
@@ -105,10 +117,6 @@
         }
 
         .postNews {
-            background: #DDD;
-            -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-            -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
             padding: 10px 0;
         }
 
@@ -120,6 +128,33 @@
         .postItem .postContent {
             margin: 0 20px;
         }
+
+        .postSell img {
+            width: 100%;
+        }
+
+        .postDateTime:before, .postLocation:before {
+            content: "";
+            float: left;
+            width: 14px;
+            height: 14px;
+            margin-right: 5px;
+            background: url(icons.png) no-repeat;
+        }
+
+        .postDateTime:before {
+            background-position: 0 0;
+        }
+
+        .postLocation:before {
+            background-position: 0 -14px;
+        }
+
+        .postDateTime, .postLocation {
+            margin-top: 10px;
+            height: 16px;
+            line-height: 16px;
+        }
     </style>
 </head>
 <body>
@@ -129,6 +164,10 @@
         <div class="logo">SPOT</div>
         <img class="profile profile-small" src="poi-46.png" style="border-color: #FFEFBF" />
     </div>
+</div>
+
+<div class="ad">
+ad
 </div>
 
 <div id="mainContent" class="widthBound">
@@ -142,10 +181,16 @@
         </div>
     </div>
 
+    <div class="postItem postSell">
+        <img src="ad.png" />
+    </div>
+
     <div class="postItem postUser">
         <img class="profile profile-small" src="真主.jpg" style="border-color: #007FFF" />
         <div class="postContent">
-            <span class="postTitle">第一屆沼躍魚之百魚遊行</span>
+            <div class="postTitle">第一屆沼躍魚之百魚遊行</div>
+            <div class="postDateTime">5 April 2015, 15:00</div>
+            <div class="postLocation">Kowloon Bay</div>
         </div>
     </div>
 
