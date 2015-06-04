@@ -67,13 +67,15 @@
         }
 
         #profile-set-panel {
+            display: none;
+
             float: right;
             background: #666;
             position: relative;
             right: -60px;
             top: 0;
             width: 300px;
-            height: 320px;
+            height: 256px;
             z-index: 1;
             color: #ccc;
             font-family: 'PT Sans', sans-serif;
@@ -85,6 +87,11 @@
             height: 54px;
             color: #ccc;
             text-decoration: none;
+        }
+
+        #profile-set-panel li:not(:first-child) {
+            font-size: 1.5em;
+            line-height: 2.5em;
         }
 
         #profile-set-panel li:hover {
@@ -205,6 +212,21 @@
                         View your personal profile
                     </a>
                 </li>
+                <li>
+                    <a href="#">
+                        Messages
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Settings
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Logout
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
@@ -271,4 +293,9 @@
 <div id="user-add" title="Post a new event"></div>
 
 </body>
+<script>
+    $('#top img.profile').click(function() {
+        $('#profile-set-panel').toggle(200);
+    });
+</script>
 </html>
