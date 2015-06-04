@@ -1,0 +1,39 @@
+.main-menu:hover, nav.main-menu.expanded {
+    width:250px;
+    overflow:hidden;
+    opacity:1;
+
+}
+
+.main-menu {
+    background: #999;
+    position:absolute;
+    float:left;
+    width:55px;
+    top:64px;
+    bottom:0;
+    overflow:hidden;
+    -webkit-transition:width .2s linear;
+    transition:width .2s linear;
+    -webkit-transform:translateZ(0) scale(1,1);
+    box-shadow: 1px 0 15px rgba(0, 0, 0, 0.07);
+    z-index: 1;
+}
+
+@media (min-width: 1270px) and (max-width: 1520px) {
+    .widthBound {
+        -webkit-transition:padding-left .2s linear;
+        transition:padding-left .2s linear;
+        -webkit-transform:translateZ(0) scale(1,1);
+    }
+
+    .main-menu:hover ~ .widthBound {
+        padding-left: 250px;
+    }
+}
+
+@media (max-width: 1130px) {
+    .widthBound {
+        padding-left: 55px;
+    }
+}
