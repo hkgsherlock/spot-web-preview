@@ -1,12 +1,11 @@
-.main-menu:hover, nav.main-menu.expanded {
+.filter-menu:hover, nav.filter-menu.expanded {
     width:250px;
     overflow:hidden;
     opacity:1;
-
 }
 
-.main-menu {
-    background: #999;
+.filter-menu {
+    background: #FFD5AA;
     position:absolute;
     float:left;
     width:55px;
@@ -16,7 +15,7 @@
     -webkit-transition:width .2s linear;
     transition:width .2s linear;
     -webkit-transform:translateZ(0) scale(1,1);
-    box-shadow: 1px 0 15px rgba(0, 0, 0, 0.07);
+    /*box-shadow: 1px 0 15px rgba(0, 0, 0, 0.07);*/
     z-index: 1;
 }
 
@@ -27,7 +26,7 @@
         -webkit-transform:translateZ(0) scale(1,1);
     }
 
-    .main-menu:hover ~ .widthBound {
+    .filter-menu:hover ~ .widthBound {
         padding-left: 250px;
     }
 }
@@ -36,4 +35,53 @@
     .widthBound {
         padding-left: 55px;
     }
+}
+
+/* filter buttons */
+.filter-menu li:before {
+    content: '';
+    float:left;
+    width: 55px;
+    height: 55px;
+    background: url(filters.png) no-repeat;
+}
+
+.filter-menu li {
+    display:block;
+    width: 250px;
+    overflow: hidden;
+}
+
+#filter-search:before {
+    background-position: 0 0;
+}
+
+#filter-content-type:before {
+    background-position: 0 -55px;
+}
+
+#filter-order:before {
+    background-position: 0 -110px;
+}
+
+#filter-location:before {
+    background-position: 0 -165px;
+}
+
+#filter-topic:before {
+    background-position: 0 -220px;
+}
+
+.filter-menu li input[type=text] {
+    color: #666;
+    margin-top: 15px;
+    width: 180px;
+    background: none;
+    font-size: 1.5em;
+    border: 0;
+    border-bottom: rgba(255, 255, 255, 0.75) dotted;
+}
+
+.filter-menu label.btn {
+    margin-top: 15px;
 }
