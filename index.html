@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="reset.2.0.css" />
     <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="main-menu.css" />
+    <link rel="stylesheet" type="text/css" href="profileImage-scrollers.css" />
     <style>
         html, body {
             background: #eee;
@@ -36,10 +37,11 @@
 
         #top {
             width: 100vw;
-            position: absolute;
+            position: fixed;
             top: 0;
             height: 64px;
             background: #FF9326;
+            z-index: 1;
         }
 
         .widthBound {
@@ -65,7 +67,6 @@
             -moz-border-radius: 25px;
             border: 4px transparent solid;
             position: relative;
-            z-index: 2;
         }
 
         #profile-set-panel {
@@ -103,6 +104,7 @@
         #top .profile {
             float: right;
             margin: 5px 0;
+            z-index: 2;
         }
 
         #top .logo {
@@ -110,7 +112,7 @@
         }
 
         #user-add {
-            position: absolute;
+            position: fixed;
             bottom: 24px;
             right: 40px;
             background: #FF9326 url(add.png) no-repeat center;
@@ -190,6 +192,23 @@
             margin-top: 10px;
             height: 16px;
             line-height: 16px;
+        }
+
+        .postImages {
+            background: #000;
+            max-width: 350px;
+            height: 160px;
+            float: right;
+            margin: 40px 10px 0 0;
+            overflow-x: auto;
+            overflow-y: auto;
+            text-align: right;
+            white-space: nowrap;
+            font-size: 0;
+        }
+
+        .postImages img {
+            max-height: 160px;
         }
     </style>
 </head>
@@ -305,6 +324,13 @@
         <div class="postItem postUser">
             <img class="profile profile-small" src="真主.jpg" style="border-color: #007FFF"/>
 
+            <div class="postImages">
+                <img src="https://scontent-hkg3-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/20521_1080416585317681_8140573250074634528_n.jpg?oh=5a21589814f6ae69b00d00deb643b524&oe=55F645FA" />
+                <img src="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xfp1/v/t1.0-9/s720x720/10987444_1075531962472810_7160217437665390483_n.jpg?oh=cc165da9f3596e019102bd76eed7d129&oe=55F81F9D&__gda__=1442989132_b1cb4f7378ce1bb9c93aede8462a65ff" />
+                <img src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/p180x540/10968384_372656866266393_5006023959895790418_n.jpg?oh=a3618c5a7caa258592fc5a1e2e8a14a9&oe=56017E41&__gda__=1442017311_f46a7a11604bfca6f83a996ed74568d8" />
+                <img src="https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xfp1/v/t1.0-9/s720x720/11065888_1085300898162583_1005631082532059305_n.jpg?oh=982cf9c235b56e290912e130cec88bbb&oe=560AAC9D&__gda__=1446335308_39a0b10247d7b62caf9759d14cde475a" />
+            </div>
+
             <div class="postContent">
                 <div class="postTitle">第一屆沼躍魚之百魚遊行</div>
                 <div class="postDateTime">5 April 2015, 15:00</div>
@@ -332,6 +358,20 @@
             </div>
         </div>
 
+        <div class="postItem postUser">
+            <img class="profile profile-small" src="https://scontent-hkg3-1.xx.fbcdn.net/hphotos-xat1/v/t1.0-9/p720x720/10308047_304728052985062_2807083987228691700_n.jpg?oh=bb343e643187e3e852c65a3fc36cff76&oe=55FF9840" style="border-color: #FF99CC"/>
+
+            <div class="postImages">
+                <img src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xtf1/v/t1.0-9/s720x720/11254729_381298195328047_1968036082773029902_n.jpg?oh=50a0d9804a2e5ad1b2c835fba1027245&oe=55F17BC8&__gda__=1442006502_30cf620c46c1c2c688313b53f1515a17" />
+            </div>
+
+            <div class="postContent">
+                <div class="postTitle">BAND A LIVE! 03</div>
+                <div class="postDateTime">22 August 2015, 19:00</div>
+                <div class="postLocation">Chai Wan</div>
+            </div>
+        </div>
+
     </div>
 </div>
 
@@ -341,6 +381,18 @@
 <script>
     $('#top img.profile').click(function() {
         $('#profile-set-panel').toggle();
+    });
+
+    $('.postImages').each(function(i,e) {
+       if (e.scrollWidth > 350) {
+           $(e).prepend(
+                   $('<div>')
+                           .addClass('postImages-scrollers scroller-left')
+           ).append(
+                   $('<div>')
+                           .addClass('postImages-scrollers scroller-right')
+           );
+       }
     });
 </script>
 </html>

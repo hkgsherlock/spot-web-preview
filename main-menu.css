@@ -6,7 +6,7 @@
 
 .filter-menu {
     background: #FFD5AA;
-    position:absolute;
+    position:fixed;
     float:left;
     width:55px;
     top:64px;

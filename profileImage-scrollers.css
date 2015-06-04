@@ -1,0 +1,31 @@
+.postImages-scrollers {
+    display: inline-block;
+    height: 160px;
+    width: 48px;
+    background: rgba(0,0,0,0.5);
+    line-height: 160px;
+    font-size: 48px;
+    margin-top: -56px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+
+.scroller-left:before, .scroller-right:before {
+    content: '';
+    float: left;
+    width: 6px;
+    height: 12px;
+    margin: 74px 18px;
+    font-size: initial;
+    background-image: url(arrows.png);
+    background-repeat: no-repeat;
+}
+
+.scroller-left:before {
+    background-position: 0 0;
+}
+
+.scroller-right:before {
+    background-position: 0 -12px;
+}
