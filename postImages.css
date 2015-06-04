@@ -1,0 +1,44 @@
+.postImages-container {
+    float: right;
+    margin: 40px 10px 0 0;
+}
+
+.postImages {
+    background: #000 none repeat scroll 0% 0%;
+    max-width: 350px;
+    height: 160px;
+    overflow: hidden;
+    text-align: right;
+    white-space: nowrap;
+    font-size: 0;
+}
+
+.postImages img {
+    max-height: 160px;
+}
+
+.postImages-scroller-left, .postImages-scroller-right {
+    position: relative;
+    top: 0;
+    display: inline;
+    height: 160px;
+    width: 50px;
+    background: rgba(0,0,0,0.5) url(arrows.png) no-repeat;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+
+.postImages-scroller-left {
+    float: left;
+    left: 0;
+    background-position: 0 0;
+    margin-right: -50px;
+}
+
+.postImages-scroller-right {
+    float: right;
+    right: 0;
+    background-position: -50px 0;
+    margin-left: -50px;
+}
