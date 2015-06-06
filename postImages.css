@@ -3,8 +3,12 @@
     margin: 40px 10px 0 0;
 }
 
+.postItem .postImages-container ~ .postContent {
+    height: 170px;
+}
+
 .postImages {
-    background: #000 none repeat scroll 0% 0%;
+    background: #000 none repeat scroll 0 0;
     max-width: 350px;
     height: 160px;
     overflow: hidden;

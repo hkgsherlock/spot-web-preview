@@ -20,6 +20,7 @@
         <div class="logo">SPOT</div>
         <span class="board"><a href="#">News</a></span>
         <span class="board"><a href="#">Events</a></span>
+        <div class="profile-messages-count-mini" title="1 new message">1</div>
         <img class="profile profile-small" src="poi-46.png" style="border-color: #FFEFBF" title="Your profile image&#013;Click to toggle personal panel."/>
         <div id="profile-set-panel">
             <ul>
@@ -31,6 +32,9 @@
                 </li>
                 <li>
                     <a href="#">
+                        <div class="menu-messages-count">
+                            1
+                        </div>
                         Messages
                     </a>
                 </li>
@@ -147,7 +151,7 @@
 <nav class="filter-menu">
     <ul>
         <li id="filter-search" title="Search">
-            <input type="text" placeholder="Title?" />
+            <input type="text" id="filter-search-in" placeholder="Title?" />
         </li>
         <li id="filter-content-type" title="Content Type">
             <div class="btn-group btn-group-justified" data-toggle="buttons">
@@ -200,14 +204,14 @@
     </ul>
 </nav>
 
-<div class="widthBound">
+<div class="widthBound" id="context">
     <div class="ad-on-the-right">
 
     </div>
 
     <div id="mainContent">
 
-        <div class="postItem postNews">
+        <div class="postItem postEtc">
             <img class="profile profile-small"
                  src="https://t0.gstatic.com/images?q=tbn:ANd9GcQ0Ygf8j9cn1ZLeE40_-qJWeD66Rm28FpgVfmGFDOUAAUqPeZflM7KPIMjSoERYmu5Vd2SRkgnd"
                  style="border-color: #999"/>
@@ -215,13 +219,19 @@
             <div class="postContent">
                 <span class="postTitle">買樓無望34%港青年欲移民</span>
             </div>
+            <div class="postFeedbacks">
+                14 points
+                <span class="feedback-points-up" title="Up-vote"></span>
+                <span class="feedback-points-down" title="Down-vote"></span>
+                , 25 comments
+            </div>
         </div>
 
         <div class="postItem postSell">
             <img src="ad.png"/>
         </div>
 
-        <div class="postItem postUser">
+        <div class="postItem postPrimary">
             <img class="profile profile-small" src="真主.jpg" style="border-color: #007FFF"/>
 
             <div class="postImages-container">
@@ -238,9 +248,15 @@
                 <div class="postDateTime">5 April 2015, 15:00</div>
                 <div class="postLocation">Kowloon Bay</div>
             </div>
+            <div class="postFeedbacks">
+                14 points
+                <span class="feedback-points-up" title="Up-vote"></span>
+                <span class="feedback-points-down" title="Down-vote"></span>
+                , 25 comments
+            </div>
         </div>
 
-        <div class="postItem postNews">
+        <div class="postItem postEtc">
             <img class="profile profile-small"
                  src="data:image/jpeg;base64,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"
                  style="border-color: #999"/>
@@ -248,9 +264,15 @@
             <div class="postContent">
                 <span class="postTitle">高永文說不會對南韓發出旅遊警示</span>
             </div>
+            <div class="postFeedbacks">
+                14 points
+                <span class="feedback-points-up" title="Up-vote"></span>
+                <span class="feedback-points-down" title="Down-vote"></span>
+                , 25 comments
+            </div>
         </div>
 
-        <div class="postItem postNews">
+        <div class="postItem postEtc">
             <img class="profile profile-small"
                  src="data:image/jpeg;base64,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"
                  style="border-color: #999"/>
@@ -258,9 +280,15 @@
             <div class="postContent">
                 <span class="postTitle">湖北長江船難：400餘人仍失蹤救援爭分奪秒</span>
             </div>
+            <div class="postFeedbacks">
+                14 points
+                <span class="feedback-points-up" title="Up-vote"></span>
+                <span class="feedback-points-down" title="Down-vote"></span>
+                , 25 comments
+            </div>
         </div>
 
-        <div class="postItem postUser">
+        <div class="postItem postPrimary">
             <img class="profile profile-small" src="https://scontent-hkg3-1.xx.fbcdn.net/hphotos-xat1/v/t1.0-9/p720x720/10308047_304728052985062_2807083987228691700_n.jpg?oh=bb343e643187e3e852c65a3fc36cff76&oe=55FF9840" style="border-color: #FF99CC"/>
 
             <div class="postImages-container">
@@ -273,6 +301,12 @@
                 <div class="postTitle">BAND A LIVE! 03</div>
                 <div class="postDateTime">22 August 2015, 19:00</div>
                 <div class="postLocation">Chai Wan</div>
+            </div>
+            <div class="postFeedbacks">
+                14 points
+                <span class="feedback-points-up" title="Up-vote"></span>
+                <span class="feedback-points-down" title="Down-vote"></span>
+                , 25 comments
             </div>
         </div>
 

@@ -1,6 +1,14 @@
+$('input#filter-search-in').focusin(function(e) {
+    $('.filter-menu').addClass('expanded');
+}).focusout(function(e) {
+    $('.filter-menu').removeClass('expanded');
+});
+
+/*********** ↓ profile panel ↓ ***********/
 $('#top img.profile').click(function() {
     $('#profile-set-panel').toggle();
 });
+/*********** ↑ profile panel ↑ ***********/
 
 /*********** ↓ filter map ↓ ***********/
 $('#filter-location-selector').offset({
@@ -58,9 +66,15 @@ $('button[name=done]').click(function(e) {
         txtArr[txtArr.length] = disp;
     });
     if (txtArr.length > 0) {
+        var txt = txtArr.join(', ');
+        var show = txt;
+        if (txtArr.length > 2)
+            show = "[" + txtArr.length + "] " + txtArr[0] + ", " + txtArr[1] + "...";
+
         $(frm.data('bound'))
             .data('selected', saving)
-            .text(txtArr.join(', '));
+            .attr('title', txt)
+            .text(show);
     } else {
         $(frm.data('bound'))
             .data('selected', saving)
@@ -85,7 +99,8 @@ $('.postImages').each(function(i,e) {
 });
 /*********** ↑ filter map ↑ ***********/
 
-    // forth
+/*********** ↓ gallery ↓ ***********/
+// forth
 $('.postImages-scroller-right').hover(function(e) {
     var t = $(e.target).parent().find('.postImages');
     t.data('scrolling', setInterval(function() {
@@ -112,3 +127,4 @@ $('.postImages-scroller-left').hover(function(e) {
     clearInterval(t.data('scrolling'));
     t.stop(true,true);
 });
+/*********** ↑ gallery ↑ ***********/
