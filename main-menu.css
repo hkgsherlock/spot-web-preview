@@ -53,6 +53,12 @@
     overflow: hidden;
 }
 
+.filter-menu li>* {
+    margin: 5px;
+    width: 180px;
+    box-sizing: border-box;
+}
+
 #filter-search:before {
     background-position: 0 0;
 }
@@ -76,18 +82,14 @@
 .filter-menu li input[type=text] {
     color: #666;
     margin-top: 15px;
+    padding: 0;
     width: 180px;
     background: none;
     font-size: 1.5em;
     border: 0;
-    border-bottom: rgba(255, 255, 255, 0.75) dotted;
+    border-bottom: #999 dotted;
 }
 
 .filter-menu li>.btn-group>label.btn, .filter-menu li>button, .filter-menu .btn-group-vertical {
     margin-top: 12px;
-}
-
-.filter-menu .btn-group-vertical {
-    width: 180px;
-    box-sizing: border-box;
 }
