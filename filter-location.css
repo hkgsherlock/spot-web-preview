@@ -1,0 +1,26 @@
+#filter-location-selector {
+    display: none;
+    position: fixed;
+    width: 300px;
+    text-align: center;
+    z-index: 2;
+}
+
+#filter-location-selector * {
+    box-sizing: border-box;
+}
+
+#filter-location-formbtn {
+    width: 100%;
+    margin-top: 1em;
+}
+
+.filter-location:not(#filter-location-lv1) {
+    display: none;
+}
+
+.filter-location {
+    padding: 10px;
+    width: 100%;
+    border: 1px #ccc dashed;
+}

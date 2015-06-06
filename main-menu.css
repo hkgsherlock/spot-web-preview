@@ -26,7 +26,8 @@
         -webkit-transform:translateZ(0) scale(1,1);
     }
 
-    .filter-menu:hover ~ .widthBound {
+    .filter-menu:hover ~ .widthBound,
+    .filter-menu.expanded ~ .widthBound{
         padding-left: 250px;
     }
 }
@@ -64,7 +65,7 @@
     background-position: 0 -110px;
 }
 
-#filter-location:before {
+#filter-loc:before {
     background-position: 0 -165px;
 }
 
@@ -82,6 +83,11 @@
     border-bottom: rgba(255, 255, 255, 0.75) dotted;
 }
 
-.filter-menu label.btn {
+.filter-menu li>.btn-group>label.btn, .filter-menu li>button, .filter-menu .btn-group-vertical {
     margin-top: 12px;
+}
+
+.filter-menu .btn-group-vertical {
+    width: 180px;
+    box-sizing: border-box;
 }
