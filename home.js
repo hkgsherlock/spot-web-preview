@@ -5,7 +5,7 @@ $('input#filter-search-in').focusin(function(e) {
 });
 
 /*********** ↓ profile panel ↓ ***********/
-$('#top img.profile').click(function() {
+$('#top img.profile, #top .profile-messages-count-mini').click(function() {
     $('#profile-set-panel').toggle();
 });
 /*********** ↑ profile panel ↑ ***********/
@@ -88,43 +88,44 @@ $('button[name=close]').click(function(e) {
     $($(e.target).data('form')).hide();
     $('.filter-menu').removeClass('expanded');
 });
-
-$('.postImages').each(function(i,e) {
-    if (e.scrollWidth > 350) {
-        console.log(e);
-        $(e).parent()
-            .prepend($('<div>').addClass('postImages-scroller-right'))
-            .prepend($('<div>').addClass('postImages-scroller-left'))
-    }
-});
 /*********** ↑ filter map ↑ ***********/
 
 /*********** ↓ gallery ↓ ***********/
-// forth
-$('.postImages-scroller-right').hover(function(e) {
-    var t = $(e.target).parent().find('.postImages');
-    t.data('scrolling', setInterval(function() {
-        t.animate({
-            scrollLeft: '+=10'
-        }, 100, false);
-    }, 100));
-}, function (e) {
-    var t = $(e.target).parent().find('.postImages');
-    clearInterval(t.data('scrolling'));
-    t.stop(true,true);
-});
+$(function(){
+    $('.postImages').each(function(i,e) {
+        if (e.scrollWidth > 350) {
+            console.log(e);
+            $(e).parent()
+                .prepend($('<div>').addClass('postImages-scroller-right'))
+                .prepend($('<div>').addClass('postImages-scroller-left'))
+        }
+    });
+    // forth
+    $('.postImages-scroller-right').hover(function(e) {
+        var t = $(e.target).parent().find('.postImages');
+        t.data('scrolling', setInterval(function() {
+            t.animate({
+                scrollLeft: '+=10'
+            }, 100, false);
+        }, 100));
+    }, function (e) {
+        var t = $(e.target).parent().find('.postImages');
+        clearInterval(t.data('scrolling'));
+        t.stop(true,true);
+    });
 
-// back
-$('.postImages-scroller-left').hover(function(e) {
-    var t = $(e.target).parent().find('.postImages');
-    t.data('scrolling', setInterval(function() {
-        t.animate({
-            scrollLeft: '-=10'
-        }, 100, false);
-    }, 100));
-}, function (e) {
-    var t = $(e.target).parent().find('.postImages');
-    clearInterval(t.data('scrolling'));
-    t.stop(true,true);
+    // back
+    $('.postImages-scroller-left').hover(function(e) {
+        var t = $(e.target).parent().find('.postImages');
+        t.data('scrolling', setInterval(function() {
+            t.animate({
+                scrollLeft: '-=10'
+            }, 100, false);
+        }, 100));
+    }, function (e) {
+        var t = $(e.target).parent().find('.postImages');
+        clearInterval(t.data('scrolling'));
+        t.stop(true,true);
+    });
 });
 /*********** ↑ gallery ↑ ***********/

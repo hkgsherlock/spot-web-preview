@@ -34,20 +34,32 @@ body, #top {
 }
 
 #top .board {
+    margin: 0;
+    display: inline-block;
+    height: 64px;
     line-height: 64px;
-    margin: 10px;
-}
-
-#top .board:first-of-type {
-    margin-left: 20px;
-}
-
-#top .board a {
-    font-size: 2em;
+    padding: 0 10px;
+    font-size: 1.5em;
     text-decoration: none;
     color: #fff;
     font-family: 'PT Sans', sans-serif;
     font-weight: 600;
+}
+
+#top .board:hover {
+    background: rgba(0,0,0,.25);
+}
+
+#top .board.active {
+    background: rgba(0,0,0,.125);
+}
+
+#top .board.active:hover {
+    background: rgba(0,0,0,.375);
+}
+
+#top .board:first-of-type {
+    margin-left: 20px;
 }
 
 .widthBound {
@@ -63,6 +75,13 @@ body, #top {
     font-size: 36px;
     color: transparent;
     background: url(logo.png) no-repeat;
+    cursor: context-menu;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 img.profile-small {
@@ -110,15 +129,14 @@ img.profile-small {
 }
 
 #profile-set-panel .menu-messages-count {
+    font-family: "Noto Sans", sans-serif;
     font-weight: 600;
     float: right;
 }
 
 #profile-set-panel .menu-messages-count:after {
     content: ' new';
-    font-style: italic;
-    font-weight: 400;
-    font-size: 0.5em;
+    font: 400 0.5em italic;
 }
 
 #top .profile-messages-count-mini {
@@ -135,7 +153,13 @@ img.profile-small {
     text-align: center;
     font-size: 10px;
     font-weight: 600;
-    pointer-events: none;
+    cursor: context-menu;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #top .profile {
