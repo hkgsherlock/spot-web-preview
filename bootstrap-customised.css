@@ -40,6 +40,12 @@
     vertical-align: middle;
 }
 
+.btn-group-justified > .btn, .btn-group-justified > .btn-group {
+    display: table-cell;
+    float: none;
+    width: 1%;
+}
+
 .btn-group-vertical > .btn, .btn-group-vertical > .btn-group, .btn-group-vertical > .btn-group > .btn {
     display: block;
     float: none;
