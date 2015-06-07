@@ -1,6 +1,6 @@
-$('input#filter-search-in').focusin(function(e) {
+$('input#filter-search-in').focusin(function() {
     $('.filter-menu').addClass('expanded');
-}).focusout(function(e) {
+}).focusout(function() {
     $('.filter-menu').removeClass('expanded');
 });
 
@@ -11,12 +11,16 @@ $('#top img.profile, #top .profile-messages-count-mini').click(function() {
 /*********** ↑ profile panel ↑ ***********/
 
 /*********** ↓ filter map ↓ ***********/
+
+
+var btnFilterLoc = $('button#filter-location');
+
 $('#filter-location-selector').offset({
-    top: $('button#filter-location').offset().top + 36,
-    left: $('button#filter-location').offset().left
+    top: btnFilterLoc.offset().top + 36,
+    left: btnFilterLoc.offset().left
 });
 
-$('button#filter-location').click(function(e) {
+btnFilterLoc.click(function(e) {
     $($(e.target).data('bound')).toggle();
     $('.filter-menu').toggleClass('expanded');
 });
@@ -105,7 +109,7 @@ $(function(){
         var t = $(e.target).parent().find('.postImages');
         t.data('scrolling', setInterval(function() {
             t.animate({
-                scrollLeft: '+=10'
+                scrollLeft: '+=20'
             }, 100, false);
         }, 100));
     }, function (e) {
@@ -119,7 +123,7 @@ $(function(){
         var t = $(e.target).parent().find('.postImages');
         t.data('scrolling', setInterval(function() {
             t.animate({
-                scrollLeft: '-=10'
+                scrollLeft: '-=20'
             }, 100, false);
         }, 100));
     }, function (e) {
@@ -129,3 +133,19 @@ $(function(){
     });
 });
 /*********** ↑ gallery ↑ ***********/
+
+/*********** ↓ see more ↓ ***********/
+$('.article-content[data-etc]').append(
+    $('<span>').addClass('etc').text(' ... ').append(
+        $('<a>').attr('href','#').text('More')
+    )
+);
+
+$('.article-content[data-etc] > span.etc > a').click(function(e) {
+    e.preventDefault();
+    console.log(e.target);
+    var t = $(e.target).parent().parent();
+    t.removeAttr('etc').find('.etc').remove();
+    t.html(t.text().trim() + t.data('etc').trim());
+});
+/*********** ↑ see more ↑ ***********/

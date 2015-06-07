@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Spot</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="bootstrap-customised.css" />
+    <link rel="stylesheet" type="text/css" href="reset.2.0.css" />
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="filter.css" />
+    <link rel="stylesheet" type="text/css" href="filter-location.css" />
+    <link rel="stylesheet" type="text/css" href="postImages.css" />
+    <link rel="stylesheet" type="text/css" href="home.css" />
+</head>
+<body>
+
+<div id="top">
+    <div class="widthBound">
+        <div class="logo">SPOT</div>
+        <a class="board" href="#">News</a>
+        <a class="board active" href="#">Events</a>
+        <div class="profile-messages-count-mini" title="1 new message">1</div>
+        <img class="profile profile-small" src="poi-46.png" style="border-color: #FFEFBF" title="Your profile image&#013;Click to toggle personal panel."/>
+        <div id="profile-set-panel">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span style="font-size: 2em;">Canto Wong</span><br/>
+                        View your personal profile
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="menu-messages-count">
+                            1
+                        </div>
+                        Messages
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Settings
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<form name="filter-location-selector" id="filter-location-selector" class="panel panel-default" data-bound="#filter-location">
+    <div class="panel-heading">
+        <h3 class="panel-title">Select Location(s)</h3>
+    </div>
+    <div class="panel-body">
+        <p>Click to toggle selection, double click to expand.</p>
+
+        <div id="filter-location-lv1" class="filter-location btn-group-vertical" data-toggle="buttons" data-level="1">
+            <label class="btn btn-primary active" data-child="#filter-location-lv2-hk">
+                <input type="checkbox" name="filter-location-lv1" value="hk" autocomplete="off" checked />Hong Kong
+            </label>
+        </div>
+        <div id="filter-location-lv2-hk" class="filter-location btn-group-vertical" data-toggle="buttons" data-parent="#filter-location-lv1" data-level="2">
+            <label class="btn btn-primary" data-child="#filter-location-lv3-hki">
+                <input type="checkbox" name="filter-location-lv2" value="hki" autocomplete="off" />Hong Kong Island
+            </label>
+            <label class="btn btn-primary" data-child="#filter-location-lv3-kln">
+                <input type="checkbox" name="filter-location-lv2" value="k" autocomplete="off" />Kowloon
+            </label>
+            <label class="btn btn-primary" data-child="#filter-location-lv3-nt">
+                <input type="checkbox" name="filter-location-lv2" value="nt" autocomplete="off" />New Territories
+            </label>
+        </div>
+        <div id="filter-location-lv3-hki" class="filter-location btn-group-vertical" data-toggle="buttons" data-parent="#filter-location-lv2-hk" data-level="3">
+            <label class="btn btn-primary">
+                <input type="checkbox" name="filter-location-lv3" value="cw" autocomplete="off" />Central & Western
+            </label>
+            <label class="btn btn-primary">
+                <input type="checkbox" name="filter-location-lv3" value="e" autocomplete="off" />Eastern
+            </label>
+            <label class="btn btn-primary">
+                <input type="checkbox" name="filter-location-lv3" value="s" autocomplete="off" />Southern
+            </label>
+            <label class="btn btn-primary">
+                <input type="checkbox" name="filter-location-lv3" value="wc" autocomplete="off" />Wan Chai
+            </label>
+        </div>
+        <div id="filter-location-lv3-kln" class="filter-location btn-group-vertical" data-toggle="buttons" data-parent="#filter-location-lv2-hk" data-level="3">
+            <label class="btn btn-primary">
+                <input type="checkbox" name="filter-location-lv3" value="kc" autocomplete="off" />Kowloon City
+            </label>
+            <label class="btn btn-primary">
+                <input type="checkbox" name="filter-location-lv3" value="kt" autocomplete="off" />Kwun Tong
+            </label>
+            <label class="btn btn-primary">
+                <input type="checkbox" name="filter-location-lv3" value="ssp" autocomplete="off" />Sham Shui Po
+            </label>
+            <label class="btn btn-primary">
+                <input type="checkbox" name="filter-location-lv3" value="wts" autocomplete="off" />Wong Tai Sin
+            </label>
+            <label class="btn btn-primary">
+                <input type="checkbox" name="filter-location-lv3" value="ytm" autocomplete="off" />Yau Tsim Mong
+            </label>
+        </div>
+        <div id="filter-location-lv3-nt" class="filter-location btn-group-vertical" data-toggle="buttons" data-parent="#filter-location-lv2-hk" data-level="3">
+            <label class="btn btn-primary">
+                <input type="checkbox" name="filter-location-lv3" value="i" autocomplete="off" />Islands
+            </label>
+            <label class="btn btn-primary">
+                <input type="checkbox" name="filter-location-lv3" value="kcty" autocomplete="off" />Kwai Tsing
+            </label>
+            <label class="btn btn-primary">
+                <input type="checkbox" name="filter-location-lv3" value="n" autocomplete="off" />North
+            </label>
+            <label class="btn btn-primary">
+                <input type="checkbox" name="filter-location-lv3" value="sk" autocomplete="off" />Sai Kung
+            </label>
+            <label class="btn btn-primary">
+                <input type="checkbox" name="filter-location-lv3" value="st" autocomplete="off" />Sha Tin
+            </label>
+            <label class="btn btn-primary">
+                <input type="checkbox" name="filter-location-lv3" value="tp" autocomplete="off" />Tai Po
+            </label>
+            <label class="btn btn-primary">
+                <input type="checkbox" name="filter-location-lv3" value="tw" autocomplete="off" />Tsuen Wan
+            </label>
+            <label class="btn btn-primary">
+                <input type="checkbox" name="filter-location-lv3" value="tm" autocomplete="off" />Tuen Mun
+            </label>
+            <label class="btn btn-primary">
+                <input type="checkbox" name="filter-location-lv3" value="yl" autocomplete="off" />Yuen Long
+            </label>
+        </div>
+
+        <div id="filter-location-formbtn">
+            <button name="done" type="button" class="btn btn-success" style="float: left;" data-form="#filter-location-selector">
+                Done
+            </button>
+            <button name="close" type="button" class="btn btn-danger" style="float: right;" data-form="#filter-location-selector">
+                Cancel
+            </button>
+        </div>
+        <div style="clear: both;" ></div>
+    </div>
+</form>
+<nav class="filter-menu">
+    <ul>
+        <li id="filter-search" title="Search">
+            <input type="text" id="filter-search-in" placeholder="Title?" />
+        </li>
+        <li id="filter-content-type" title="Content Type">
+            <div class="btn-group btn-group-justified" data-toggle="buttons">
+                <label class="btn btn-orange active">
+                    <input type="radio" name="optionsContentType" id="optionHot" autocomplete="off" checked> Hot Topics
+                </label>
+                <label class="btn btn-orange">
+                    <input type="radio" name="optionsContentType" id="optionRecent" autocomplete="off"> Recents
+                </label>
+            </div>
+        </li>
+        <li id="filter-order" title="Ordering">
+            <div class="btn-group btn-group-justified" data-toggle="buttons">
+                <label class="btn btn-orange active">
+                    <input type="radio" name="optionsOrder" id="optionAsc" autocomplete="off" checked> ASC
+                </label>
+                <label class="btn btn-orange">
+                    <input type="radio" name="optionsOrder" id="optionDesc" autocomplete="off"> DESC
+                </label>
+            </div>
+        </li>
+        <li id="filter-loc" title="Location">
+            <button type="button" class="btn btn-orange" id="filter-location" data-bound="#filter-location-selector">
+                Hong Kong
+            </button>
+        </li>
+        <li id="filter-topic" title="Topic Category">
+            <!--時事, 運動, 飲食, 遊戲, 音樂, 其它-->
+            <div class="btn-group-vertical" data-toggle="buttons">
+                <label class="btn btn-orange active">
+                    <input type="checkbox" name="optionsCategory" id="option1" autocomplete="off" checked> 時事
+                </label>
+                <label class="btn btn-orange">
+                    <input type="checkbox" name="optionsCategory" id="option2" autocomplete="off"> 運動
+                </label>
+                <label class="btn btn-orange">
+                    <input type="checkbox" name="optionsCategory" id="option3" autocomplete="off"> 飲食
+                </label>
+                <label class="btn btn-orange">
+                    <input type="checkbox" name="optionsCategory" id="option4" autocomplete="off"> 遊戲
+                </label>
+                <label class="btn btn-orange">
+                    <input type="checkbox" name="optionsCategory" id="option5" autocomplete="off"> 音樂
+                </label>
+                <label class="btn btn-orange">
+                    <input type="checkbox" name="optionsCategory" id="option6" autocomplete="off"> 其它
+                </label>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+<div class="widthBound" id="context">
+</div>
+
+<div id="user-add" title="Post a new event"></div>
+
+</body>
+<script src="home.js"></script>
+</html>

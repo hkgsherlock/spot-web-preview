@@ -1,0 +1,158 @@
+a {
+    text-decoration: none;
+    color: #ff9900;
+}
+
+a:hover {
+    text-decoration: solid underline;
+}
+
+.main-parts {
+    width: 700px;
+}
+
+#friend-list {
+    float: right;
+    width: 180px;
+    min-height: 664px;
+}
+
+.panel * {
+    font-size: 14px;
+}
+
+.panel-heading .nav-tabs a {
+    background-color: transparent;
+}
+
+.panel-heading .nav-tabs .active a,
+.panel-heading .nav-tabs .active a:focus{
+    background-color: #F5F5F5;
+}
+
+.panel-body > div {
+    margin-top: 5px;
+}
+
+#personal {
+    vertical-align: bottom;
+}
+
+#personal .panel-body:after {
+    clear: left;
+    content: '';
+    display: block;
+}
+
+#personal h2 {
+    font-size: 3em;
+    font-weight: 600;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+}
+
+.profile-big-avatar {
+    max-height: 200px;
+    max-width: 200px;
+    float: left;
+    margin-right: 15px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+}
+
+#recent-activity, #favs {
+    display: table-cell;
+    width: 50%;
+}
+
+#recent-activity .panel-body, #favs .panel-body {
+    min-height: 200px;
+}
+
+#favs .panel-heading {
+    padding: 0;
+    border-bottom: 0;
+    display: table;
+    width: 100%;
+}
+
+#favs .panel-heading a {
+    display: table-cell;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #666;
+    border-bottom: 1px solid #ddd;
+}
+
+#favs .panel-heading a:visited {
+    color: #666;
+}
+
+#favs .panel-heading a.active {
+    background: #FFD5AA;
+    color: #333;
+    border-bottom: 0;
+}
+
+#favs .panel-heading a:not(:first-of-type) {
+    border-left: 1px #ccc solid;
+}
+
+#favs .panel-body {
+    display: none;
+}
+
+#favs .panel-body.active {
+    display: block;
+}
+
+img.profile-mini {
+    width: 32px;
+    height: 32px;
+    border-radius: 18px;
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    border: 3px transparent solid;
+    position: relative;
+}
+
+.profile-item img.profile {
+    float: left;
+    margin: 0 5px 5px 0;
+}
+
+.profile-item a:hover {
+    text-decoration: solid underline;
+}
+
+.profile-item a.person {
+    font-weight: 600;
+}
+
+.profile-item a.post {
+    color: #cf7900;
+}
+
+.profile-item:not(:first-of-type) {
+    clear: left;
+    border-top: 1px #ccc solid;
+    padding-top: 5px;
+}
+
+.profile-item-feedbacks, .profile-item-feedbacks * {
+    font-size: 12px;
+}
+
+.profile-item-time {
+    float: right;
+}
+
+#friend-list .panel-body {
+    padding: 5px 10px;
+}
+
+#friend-list .profile-item .person {
+    line-height: 38px
+}

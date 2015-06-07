@@ -17,6 +17,12 @@
     font-size: 0;
 }
 
+.postImages-container .postImages-scroller-left ~ .postImages:before,
+.postImages-container .postImages-scroller-left ~ .postImages:after {
+    content: '';
+    padding: 0 25px;
+}
+
 .postImages img {
     max-height: 160px;
 }

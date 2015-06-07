@@ -14,14 +14,24 @@ body, #top {
     float: right;
     width: 180px;
     height: 75vh;
-    margin-top: 15px;
+}
+
+#context {
+    margin-top: 64px;
+    padding-top: 10px;
+}
+
+#context:after {
+    clear: both;
+    margin-top: 20px;
+    width: 100%;
+    content: '';
+    display: block;
 }
 
 #mainContent {
     width: 700px;
-    margin-top: 64px;
-    padding: 10px;
-    /*border: 1px #f00 dotted;*/
+    padding: 15px;
 }
 
 #top {
@@ -205,7 +215,6 @@ img.profile-small {
 }
 
 .postPrimary {
-    height: 200px;
     background: #FFD5AA;
     -webkit-box-shadow: 0 0 5px rgba(140, 70, 0, 0.5);
     -moz-box-shadow: 0 0 5px rgba(140, 70, 0, 0.5);
@@ -257,4 +266,28 @@ img.profile-small {
     margin-top: 10px;
     height: 16px;
     line-height: 16px;
+}
+
+span.postAuthor {
+
+}
+
+.article-content {
+    color: #333;
+    font-size: 1.15em;
+}
+
+.article-content > h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.article-content > .etc > a {
+    color: #cf7900;
+    text-decoration: none;
+}
+
+.article-content > .etc > a:hover {
+    text-decoration: solid underline;
 }
