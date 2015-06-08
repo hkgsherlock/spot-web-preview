@@ -95,7 +95,7 @@ $('button[name=close]').click(function(e) {
 /*********** ↑ filter map ↑ ***********/
 
 /*********** ↓ gallery ↓ ***********/
-$(function(){
+$(window).load(function(){
     $('.postImages').each(function(i,e) {
         if (e.scrollWidth > 350) {
             console.log(e);
