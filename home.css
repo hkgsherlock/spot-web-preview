@@ -35,7 +35,7 @@ body, #top {
 #mainContent {
     width: 700px;
     padding: 0 15px;
-    /*margin: -10px 0 0 -5px;*/
+    margin: -10px 0 0 -10px;
 }
 
 #top {
