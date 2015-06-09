@@ -146,6 +146,6 @@ $('.article-content[data-etc] > span.etc > a').click(function(e) {
     console.log(e.target);
     var t = $(e.target).parent().parent();
     t.removeAttr('etc').find('.etc').remove();
-    t.html(t.text().trim() + t.data('etc').trim());
+    t.html(t.html().trim() + t.data('etc').trim());
 });
 /*********** ↑ see more ↑ ***********/

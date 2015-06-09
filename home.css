@@ -11,10 +11,12 @@ body, #top {
 
 .ad-on-the-right {
     background-color: #fff;
-    float: right;
+    position: absolute;
+    left: 50%;
     width: 180px;
     height: 75vh;
-    margin-right: -5px;
+    margin-left: 270px;
+    z-index: 0;
 }
 
 #context {
@@ -235,6 +237,12 @@ img.profile-small {
     margin: 0 20px;
 }
 
+.postContent:after {
+    display: block;
+    content: '';
+    clear:both;
+}
+
 .postSell {
     padding: 0;
 }
@@ -270,13 +278,14 @@ img.profile-small {
     line-height: 16px;
 }
 
-span.postAuthor {
+span.postPerson, span.postAuthor {
     color: #666;
 }
 
 .article-content {
     color: #333;
     font-size: 1.15em;
+    text-align: justify;
 }
 
 .article-content > h3 {
@@ -292,4 +301,9 @@ span.postAuthor {
 
 .article-content > .etc > a:hover {
     text-decoration: solid underline;
+}
+
+.postContent > img {
+    float: right;
+    margin: 5px 0 5px 10px;
 }
