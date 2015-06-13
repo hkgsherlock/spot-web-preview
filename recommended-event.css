@@ -1,0 +1,13 @@
+.postRemarks {
+    display:block;
+    color: #666;
+    font-style: italic;
+    margin: .5em 0;
+}
+
+.postCover.half {
+    width: 50%;
+    height: 140px;
+    float: left;
+    margin: 0 10px 0 0;
+}

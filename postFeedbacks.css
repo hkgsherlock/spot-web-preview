@@ -1,6 +1,7 @@
 .postFeedbacks {
-    margin: 10px 20px 0 20px;
+    margin: 10px 20px 0 10px;
     color: #333;
+    float: right;
 }
 
 .feedback-points-up, .feedback-points-down {
@@ -17,4 +18,47 @@
 
 .feedback-points-down {
     background-position: -12px 0;
+}
+
+.postItem > .push {
+    display: inline-block;
+    font-size: 1.1em;
+    line-height: 2em;
+    margin: 4px 20px 0 0;
+    float: right;
+    text-decoration: none;
+    color: #ff7f00;
+}
+
+.push:before {
+    content: '';
+    display: inline-block;
+    width: 1.1em;
+    height: 1.1em;
+    background: transparent url('c-ico/push.png') no-repeat;
+    background-size: 1.1em 1.1em;
+    margin-right: .25em;
+}
+
+.push-count:before, .comment-count:before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background: transparent none no-repeat;
+    background-size: 1em 1em;
+    margin-right: .2em;
+}
+
+.push-count:before {
+    background-image: url('c-ico/push.png');
+}
+
+.comment-count:before {
+    background-image: url('c-ico/Strike Filled-32.png');
+}
+
+.postDateTime.bottom {
+    float: left;
+    margin-left: 20px;
 }

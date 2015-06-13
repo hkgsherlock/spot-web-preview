@@ -1,4 +1,6 @@
 @import url(postFeedbacks.css);
+@import url(recommended-event.css);
+@import url(right-ad.css);
 
 html, body {
     background: #eee;
@@ -7,16 +9,6 @@ html, body {
 
 body, #top {
     min-width: 1130px;
-}
-
-.ad-on-the-right {
-    background-color: #fff;
-    position: absolute;
-    left: 50%;
-    width: 180px;
-    height: 75vh;
-    margin-left: 270px;
-    z-index: 0;
 }
 
 #context {
@@ -34,8 +26,7 @@ body, #top {
 
 #mainContent {
     width: 700px;
-    padding: 0 15px;
-    margin: -10px 0 0 -10px;
+    padding: 0 10px;
 }
 
 #top {
@@ -200,6 +191,10 @@ img.profile-small {
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
 }
 
+.postItem:first-of-type {
+    margin-top: 0;
+}
+
 .postItem .profile {
     position: relative;
     left: -60px;
@@ -237,7 +232,7 @@ img.profile-small {
     margin: 0 20px;
 }
 
-.postContent:after {
+.postItem:after, .postContent:after {
     display: block;
     content: '';
     clear:both;
@@ -282,6 +277,10 @@ span.postPerson, span.postAuthor {
     color: #666;
 }
 
+span.postPerson {
+    display: block;
+}
+
 .article-content {
     color: #333;
     font-size: 1.15em;
@@ -303,7 +302,12 @@ span.postPerson, span.postAuthor {
     text-decoration: solid underline;
 }
 
-.postContent > img {
-    float: right;
-    margin: 5px 0 5px 10px;
+.postCover {
+    width: 100%;
+    height: 280px;
+    background-color: #222;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 10px 0;
 }

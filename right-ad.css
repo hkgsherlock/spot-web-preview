@@ -1,0 +1,67 @@
+.right-ad-resv {
+    width: 180px;
+}
+
+.width-sep {
+    display: table;
+}
+
+.width-sep-row {
+    display: table-row;
+}
+
+.width-sep-row > * {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.right-ad-fixed {
+    display: block;
+    position: fixed;
+    width: 184px;
+
+    font-weight: initial;
+
+    background: #FFD5AA;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+
+.right-ad-fixed:after {
+    text-align: right;
+    content: 'Sponsored';
+    font-style: italic;
+    color: #666;
+    margin: .5em;
+}
+
+.right-ad-fixed > div {
+    margin: .5em;
+    opacity: .75;
+}
+
+.right-ad-fixed > div:not(:last-of-type) {
+    padding-bottom: 1em;
+    border-bottom: 1px #999 solid;
+}
+
+.right-ad-fixed > div:hover {
+    opacity: 1;
+}
+
+.right-ad-fixed > div * {
+    display: block;
+    width: 100%;
+}
+
+.right-ad-fixed a {
+    color: #ff7f00;
+    text-decoration: none;
+}
+
+.right-ad-fixed a:hover {
+    text-decoration: underline;
+}
+
+.right-ad-fixed .title {
+    font-weight: 600;
+}

@@ -1,0 +1,3 @@
+[submodule "c-ico"]
+	path = c-ico
+	url = https://github.com/project-spot/icons-storage.git
